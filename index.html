@@ -337,8 +337,7 @@
             <div class="text-sm opacity-70" style="color: var(--text-secondary);">© 2025 Krushnadev — BCA Graduate | CGPA 7.84</div>
         </div>
     </footer>
-
-    <script>
+<script>
         const toggle = document.getElementById('darkModeToggle');
         const icon = document.getElementById('themeIcon');
         function setTheme(t) { if(t==='dark'){ document.body.classList.add('dark'); localStorage.setItem('theme','dark'); icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); } else { document.body.classList.remove('dark'); localStorage.setItem('theme','light'); icon.classList.remove('fa-sun'); icon.classList.add('fa-moon'); } }
@@ -368,9 +367,27 @@
         }
         window.closeModal = () => { document.getElementById('imageModal').style.display = 'none'; };
         
-        function downloadCV() { alert("📄 Krushnadev Talpada - Resume\n\nEducation:\n• BCA: CGPA 7.84 (Sardar Patel University)\n• 12th: 68% | 10th: 58%\nSkills: HTML, CSS, JS, Bootstrap, React, PHP, Python, Photoshop\nContact: krushndevkant@gmail.com | +91 7862043514\nInstagram: @krushn_kant_07\nYouTube: @lofigitwala\n\nLive Projects: Krishna Ads (React) & Krishna Advertisement"); }
-        document.getElementById('downloadCvBtnHome')?.addEventListener('click', downloadCV);
-        document.getElementById('downloadCvBtnInfo')?.addEventListener('click', downloadCV);
+        // UPDATED: Download CV from cv/mycv.pdf folder
+        function downloadCV() {
+            // Create a temporary anchor element to trigger download from the cv folder
+            const link = document.createElement('a');
+            link.href = 'cv/mycv.pdf';
+            link.download = 'Krushnadev_Talpada_Resume.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        
+        // Attach download event to both buttons
+        const downloadBtnHome = document.getElementById('downloadCvBtnHome');
+        const downloadBtnInfo = document.getElementById('downloadCvBtnInfo');
+        
+        if(downloadBtnHome) {
+            downloadBtnHome.addEventListener('click', downloadCV);
+        }
+        if(downloadBtnInfo) {
+            downloadBtnInfo.addEventListener('click', downloadCV);
+        }
         
         window.addEventListener('load', () => { document.querySelectorAll('.section-transition').forEach(el => { if(el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('section-visible'); }); });
     </script>
