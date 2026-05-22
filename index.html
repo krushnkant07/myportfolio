@@ -10,7 +10,6 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* ---------- CSS variables & dark mode ---------- */
         :root {
             --bg-primary: #ffffff;
             --bg-secondary: #f9fafb;
@@ -19,7 +18,6 @@
             --border-color: #e5e7eb;
             --card-bg: #ffffff;
             --nav-bg: rgba(255,255,255,0.95);
-            --accent-glow: #f97316;
         }
         .dark {
             --bg-primary: #0f172a;
@@ -83,16 +81,16 @@
         .project-card-link { transition: all 0.2s ease; display: block; text-decoration: none; }
         .project-card-link:hover .project-icon { transform: scale(1.05); }
         .project-icon { transition: transform 0.25s ease; }
+        .social-icon { transition: transform 0.2s ease; display: inline-block; }
+        .social-icon:hover { transform: translateY(-3px); }
     </style>
 </head>
 <body>
 
-    <!-- Modal Lightbox for Gallery -->
     <div id="imageModal" class="modal" onclick="closeModal()">
         <img id="modalImage" src="" alt="Enlarged view">
     </div>
 
-    <!-- Header / Navigation -->
     <header class="sticky top-0 z-50 backdrop-blur-md border-b transition-all duration-300" style="background-color: var(--nav-bg); border-color: var(--border-color);">
         <nav class="container mx-auto px-6 md:px-12 lg:px-20 py-4 flex flex-wrap items-center justify-between">
             <div class="text-2xl font-extrabold tracking-tight cursor-pointer" onclick="showPage('home')">
@@ -131,15 +129,15 @@
                             <span class="text-sm uppercase tracking-wider px-4 py-1.5 rounded-full font-semibold inline-block" style="background-color: var(--bg-secondary); color: var(--text-secondary);"><i class="fas fa-code mr-1"></i> Website Designer</span>
                             <h1 class="text-5xl md:text-7xl font-bold leading-tight">I'm <span class="bg-orange-500 text-white px-3 inline-block rounded-xl shadow">Krushn Kant</span></h1>
                             <h2 class="text-3xl md:text-4xl font-semibold" style="color: var(--text-secondary);">HTML | CSS | JS | Bootstrap | React</h2>
-                            <p class="text-lg max-w-xl" style="color: var(--text-secondary);">Creative website designer with BCA background, building responsive, user-friendly websites. Passionate about modern UI and interactive experiences.</p>
+                            <p class="text-lg max-w-xl" style="color: var(--text-secondary);">Creative website designer with BCA background (CGPA 7.84), building responsive, user-friendly websites. Passionate about modern UI and interactive experiences.</p>
                             <div class="flex flex-wrap gap-4 pt-4">
                                 <a onclick="showPage('projects')" class="bg-orange-600 text-white px-7 py-3 rounded-full font-medium transition-all hover:scale-105 shadow-md cursor-pointer">View Live Projects <i class="fas fa-arrow-right ml-2"></i></a>
                                 <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" class="border-2 px-7 py-3 rounded-full font-medium transition-all cursor-pointer" style="border-color: var(--text-primary); color: var(--text-primary);">Contact Me</a>
-                                <a id="downloadCvBtnHome" class="border-2 px-7 py-3 rounded-full font-medium transition-all hover:bg-orange-500 hover:text-white dark:hover:bg-white dark:hover:text-black cursor-pointer" style="border-color: var(--text-primary); color: var(--text-primary);"><i class="fas fa-download mr-2"></i>Download CV (PDF)</a>
+                                <a id="downloadCvBtnHome" class="border-2 px-7 py-3 rounded-full font-medium transition-all hover:bg-orange-500 hover:text-white cursor-pointer" style="border-color: var(--text-primary); color: var(--text-primary);"><i class="fas fa-download mr-2"></i>Download CV (PDF)</a>
                             </div>
                             <div class="grid grid-cols-3 gap-6 pt-10 border-t mt-6" style="border-color: var(--border-color);">
                                 <div><p class="text-3xl font-black">10+</p><p class="text-sm" style="color: var(--text-secondary);">Web Projects</p></div>
-                                <div><p class="text-3xl font-black">BCA</p><p class="text-sm" style="color: var(--text-secondary);">Graduate</p></div>
+                                <div><p class="text-3xl font-black">BCA</p><p class="text-sm" style="color: var(--text-secondary);">CGPA 7.84</p></div>
                                 <div><p class="text-3xl font-black">✅</p><p class="text-sm" style="color: var(--text-secondary);">Open to Work</p></div>
                             </div>
                         </div>
@@ -168,6 +166,7 @@
                                 <i class="fas fa-laptop-code text-6xl text-orange-500 mb-3"></i>
                                 <p class="mt-2 font-semibold text-xl">BCA Graduate</p>
                                 <p class="text-sm" style="color: var(--text-secondary);">Sardar Patel University, Anand</p>
+                                <p class="text-sm font-medium mt-1">CGPA: 7.84</p>
                                 <div class="flex gap-3 mt-4 justify-center"><span class="px-3 py-1 rounded-full text-xs bg-orange-100 dark:bg-orange-900">HTML5</span><span class="px-3 py-1 rounded-full text-xs bg-orange-100 dark:bg-orange-900">CSS3</span><span class="px-3 py-1 rounded-full text-xs bg-orange-100 dark:bg-orange-900">JS</span></div>
                             </div>
                         </div>
@@ -192,24 +191,16 @@
                 </div>
             </section>
 
-            <section class="py-20 px-6 md:px-12 lg:px-20 section-transition" style="background-color: var(--bg-secondary);">
-                <div class="container mx-auto max-w-6xl">
-                    <div class="grid md:grid-cols-2 gap-10">
-                        <div class="p-6 rounded-2xl shadow-md resume-data-highlight" style="background-color: var(--bg-primary);"><h3 class="text-2xl font-bold flex items-center gap-2"><i class="fas fa-graduation-cap text-orange-500"></i> Education</h3><div class="mt-4 space-y-3"><p><span class="font-semibold">Secondary School (10th):</span> T.B.H.S</p><p><span class="font-semibold">Higher Secondary (12th):</span> T.B.H.S</p><p><span class="font-semibold">Bachelor of Computer Application (BCA):</span> Anand Commerce College, Sardar Patel University, V.V nagar</p><p><span class="font-semibold">Additional:</span> Full Website Developer Training, Microsoft Word, PowerPoint</p></div></div>
-                        <div class="p-6 rounded-2xl shadow-md" style="background-color: var(--bg-primary);"><h3 class="text-2xl font-bold flex items-center gap-2"><i class="fas fa-language"></i> Languages & Hobbies</h3><div class="mt-4"><p><span class="font-semibold">Languages:</span> Hindi, Gujarati, English</p><p class="mt-2"><span class="font-semibold">Hobbies:</span> Reading books, Video editing, Animation, ChatGPT prompting</p><div class="mt-6 flex flex-wrap gap-2"><span class="px-3 py-1 rounded-full bg-orange-200 dark:bg-orange-800">Photoshop</span><span class="px-3 py-1 rounded-full bg-orange-200 dark:bg-orange-800">Video Editor</span><span class="px-3 py-1 rounded-full bg-orange-200 dark:bg-orange-800">Animation</span></div></div></div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="contact" class="py-20 px-6 md:px-12 lg:px-20 section-transition" style="background-color: var(--bg-primary);">
+            <section id="contact" class="py-20 px-6 md:px-12 lg:px-20 section-transition" style="background-color: var(--bg-secondary);">
                 <div class="container mx-auto max-w-4xl text-center"><h2 class="text-4xl font-bold">Let's Connect</h2><div class="w-20 h-1 bg-orange-500 mx-auto my-4"></div>
                     <div class="flex flex-wrap justify-center gap-5 mb-10">
-                        <a href="mailto:krushndevkant@gmail.com" class="contact-btn flex items-center gap-2 px-5 py-3 rounded-full shadow-md transition hover:bg-orange-100 dark:hover:bg-gray-700" style="background: var(--bg-secondary);"><i class="fas fa-envelope text-orange-600"></i> krushndevkant@gmail.com</a>
-                        <a href="tel:+917663045514" class="contact-btn flex items-center gap-2 px-5 py-3 rounded-full shadow-md" style="background: var(--bg-secondary);"><i class="fas fa-phone text-green-600"></i> +91 7663045514</a>
-                        <a href="https://wa.me/917663045514" target="_blank" class="contact-btn flex items-center gap-2 px-5 py-3 rounded-full shadow-md" style="background: var(--bg-secondary);"><i class="fab fa-whatsapp text-green-500"></i> WhatsApp</a>
-                        <a href="https://linkedin.com/in/krushn-kant" target="_blank" class="contact-btn flex items-center gap-2 px-5 py-3 rounded-full shadow-md" style="background: var(--bg-secondary);"><i class="fab fa-linkedin text-blue-600"></i> LinkedIn</a>
+                        <a href="mailto:krushndevkant@gmail.com" class="contact-btn flex items-center gap-2 px-5 py-3 rounded-full shadow-md transition hover:bg-orange-100 dark:hover:bg-gray-700" style="background: var(--bg-primary);"><i class="fas fa-envelope text-orange-600"></i> krushndevkant@gmail.com</a>
+                        <a href="tel:+917663045514" class="contact-btn flex items-center gap-2 px-5 py-3 rounded-full shadow-md" style="background: var(--bg-primary);"><i class="fas fa-phone text-green-600"></i> +91 7663045514</a>
+                        <a href="https://wa.me/917663045514" target="_blank" class="contact-btn flex items-center gap-2 px-5 py-3 rounded-full shadow-md" style="background: var(--bg-primary);"><i class="fab fa-whatsapp text-green-500"></i> WhatsApp</a>
+                        <a href="https://instagram.com/krushn_kant_07" target="_blank" class="contact-btn flex items-center gap-2 px-5 py-3 rounded-full shadow-md" style="background: var(--bg-primary);"><i class="fab fa-instagram text-pink-500"></i> Instagram</a>
+                        <a href="https://www.youtube.com/@lofigitwala" target="_blank" class="contact-btn flex items-center gap-2 px-5 py-3 rounded-full shadow-md" style="background: var(--bg-primary);"><i class="fab fa-youtube text-red-600"></i> YouTube</a>
                     </div>
-                    <form class="grid md:grid-cols-2 gap-5 text-left p-8 rounded-3xl shadow-lg" style="background-color: var(--bg-secondary);">
+                    <form class="grid md:grid-cols-2 gap-5 text-left p-8 rounded-3xl shadow-lg" style="background-color: var(--bg-primary);">
                         <input type="text" placeholder="Full Name" class="border p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400" style="background-color: var(--bg-primary); border-color: var(--border-color);">
                         <input type="email" placeholder="Email Address" class="border p-3 rounded-xl focus:ring-2 focus:ring-orange-400" style="background-color: var(--bg-primary); border-color: var(--border-color);">
                         <input type="text" placeholder="Subject" class="border p-3 rounded-xl" style="background-color: var(--bg-primary); border-color: var(--border-color);">
@@ -237,8 +228,8 @@
                             </div>
                             <div class="p-6">
                                 <div class="flex items-center gap-2 mb-2"><i class="fab fa-react text-2xl text-cyan-500"></i><h2 class="text-2xl font-bold">Krishna Ads – React App</h2></div>
-                                <p class="mb-3" style="color: var(--text-secondary);">Modern advertising packages platform built with React.js, featuring dynamic pricing cards, responsive design, and smooth UI interactions.</p>
-                                <div class="flex flex-wrap gap-2 mt-3"><span class="px-3 py-1 rounded-full text-xs bg-cyan-100 dark:bg-cyan-900">React.js</span><span class="px-3 py-1 rounded-full text-xs bg-cyan-100 dark:bg-cyan-900">Tailwind CSS</span><span class="px-3 py-1 rounded-full text-xs bg-cyan-100 dark:bg-cyan-900">Vercel</span></div>
+                                <p class="mb-3" style="color: var(--text-secondary);">Modern advertising packages platform built with React.js, featuring dynamic pricing cards and smooth UI interactions.</p>
+                                <div class="flex flex-wrap gap-2 mt-3"><span class="px-3 py-1 rounded-full text-xs bg-cyan-100 dark:bg-cyan-900">React.js</span><span class="px-3 py-1 rounded-full text-xs bg-cyan-100 dark:bg-cyan-900">Tailwind CSS</span></div>
                                 <div class="mt-4 text-orange-500 font-semibold flex items-center gap-1">Visit Live Project <i class="fas fa-external-link-alt"></i></div>
                             </div>
                         </a>
@@ -248,16 +239,11 @@
                             </div>
                             <div class="p-6">
                                 <div class="flex items-center gap-2 mb-2"><i class="fab fa-html5 text-2xl text-orange-600"></i><i class="fab fa-css3-alt text-2xl text-blue-500"></i><h2 class="text-2xl font-bold">Krishna Advertisement</h2></div>
-                                <p class="mb-3" style="color: var(--text-secondary);">Complete advertising packages showcase with HTML5, CSS3 & vanilla JavaScript. Displays rickshaw banners, stickers, pamphlets and service areas across Gujarat.</p>
-                                <div class="flex flex-wrap gap-2 mt-3"><span class="px-3 py-1 rounded-full text-xs bg-orange-100 dark:bg-orange-900">HTML5</span><span class="px-3 py-1 rounded-full text-xs bg-orange-100 dark:bg-orange-900">CSS3</span><span class="px-3 py-1 rounded-full text-xs bg-orange-100 dark:bg-orange-900">JavaScript</span><span class="px-3 py-1 rounded-full text-xs bg-orange-100 dark:bg-orange-900">Bootstrap</span></div>
+                                <p class="mb-3" style="color: var(--text-secondary);">Complete advertising packages showcase with HTML5, CSS3 & vanilla JavaScript. Rickshaw banners, stickers, pamphlets and service areas.</p>
+                                <div class="flex flex-wrap gap-2 mt-3"><span class="px-3 py-1 rounded-full text-xs bg-orange-100 dark:bg-orange-900">HTML5</span><span class="px-3 py-1 rounded-full text-xs bg-orange-100 dark:bg-orange-900">CSS3</span><span class="px-3 py-1 rounded-full text-xs bg-orange-100 dark:bg-orange-900">JavaScript</span></div>
                                 <div class="mt-4 text-orange-500 font-semibold flex items-center gap-1">View Project <i class="fas fa-external-link-alt"></i></div>
                             </div>
                         </a>
-                    </div>
-                    <div class="mt-16 p-6 rounded-2xl text-center" style="background-color: var(--bg-secondary);">
-                        <i class="fas fa-chalkboard-user text-4xl text-orange-500 mb-3"></i>
-                        <h3 class="text-xl font-bold">Full Stack + Modern Frontend Expertise</h3>
-                        <p class="mt-2" style="color: var(--text-secondary);">Both projects demonstrate responsive design, performance optimization, and real-world business solutions for advertising needs across Borsad, Anand, Vadodara, and surrounding villages.</p>
                     </div>
                 </div>
             </section>
@@ -270,39 +256,70 @@
                     <div class="text-center mb-12">
                         <h1 class="text-5xl font-bold">Creative Gallery</h1>
                         <div class="w-24 h-1 bg-orange-500 mx-auto my-4"></div>
-                        <p class="text-lg" style="color: var(--text-secondary);">Moments, design concepts & UI projects</p>
+                        <p class="text-lg" style="color: var(--text-secondary);">Design concepts & UI projects</p>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="galleryContainer"></div>
                 </div>
             </section>
         </div>
 
-        <!-- ========== MY INFO PAGE (with Download CV Button) ========== -->
+        <!-- ========== MY INFO PAGE (Complete Resume with Percentages & Social Links) ========== -->
         <div id="myinfo-page" class="page-section">
             <section class="py-20 px-6 md:px-12 lg:px-20" style="background-color: var(--bg-primary);">
                 <div class="container mx-auto max-w-5xl">
                     <div class="text-center mb-12">
                         <h1 class="text-5xl font-bold">Personal Resume Hub</h1>
                         <div class="w-24 h-1 bg-orange-500 mx-auto my-4"></div>
-                        <p class="text-lg" style="color: var(--text-secondary);">Krushn Kant Talpada – Website Designer | BCA</p>
+                        <p class="text-lg" style="color: var(--text-secondary);">Krushn Kant Talpada – Website Designer | BCA (CGPA 7.84)</p>
                     </div>
                     <div class="grid md:grid-cols-2 gap-8">
                         <div class="rounded-2xl shadow-lg p-8" style="background-color: var(--bg-secondary);">
                             <h2 class="text-2xl font-bold mb-6"><i class="fas fa-id-card mr-2 text-orange-500"></i> Contact & Basic</h2>
-                            <div class="space-y-4"><div><span class="font-semibold">Full Name:</span> Krushn Kant Talpada</div><div><span class="font-semibold">Designation:</span> Website Designer / Frontend Developer</div><div><span class="font-semibold">Email:</span> krushndevkant@gmail.com <button onclick="location.href='mailto:krushndevkant@gmail.com'" class="ml-2 text-xs bg-orange-500 text-white px-2 py-1 rounded"><i class="fas fa-envelope"></i> Mail</button></div><div><span class="font-semibold">Phone:</span> +91 7663045514 <button onclick="location.href='tel:+917663045514'" class="ml-2 text-xs bg-gray-700 text-white px-2 py-1 rounded"><i class="fas fa-phone"></i> Call</button></div><div><span class="font-semibold">WhatsApp:</span> +91 7663045514 <button onclick="window.open('https://wa.me/917663045514')" class="ml-2 text-xs bg-green-600 text-white px-2 py-1 rounded"><i class="fab fa-whatsapp"></i> Chat</button></div><div><span class="font-semibold">Address:</span> Ganana, Borsad, Anand, Gujarat</div><div><span class="font-semibold">University:</span> Sardar Patel University, V.V nagar</div></div>
+                            <div class="space-y-4">
+                                <div><span class="font-semibold">Full Name:</span> Krushn Kant Talpada</div>
+                                <div><span class="font-semibold">Designation:</span> Website Designer / Frontend Developer</div>
+                                <div><span class="font-semibold">Email:</span> krushndevkant@gmail.com <button onclick="location.href='mailto:krushndevkant@gmail.com'" class="ml-2 text-xs bg-orange-500 text-white px-2 py-1 rounded"><i class="fas fa-envelope"></i> Mail</button></div>
+                                <div><span class="font-semibold">Phone:</span> +91 7663045514 <button onclick="location.href='tel:+917663045514'" class="ml-2 text-xs bg-gray-700 text-white px-2 py-1 rounded"><i class="fas fa-phone"></i> Call</button></div>
+                                <div><span class="font-semibold">WhatsApp:</span> +91 7663045514 <button onclick="window.open('https://wa.me/917663045514')" class="ml-2 text-xs bg-green-600 text-white px-2 py-1 rounded"><i class="fab fa-whatsapp"></i> Chat</button></div>
+                                <div><span class="font-semibold">Address:</span> Ganana, Borsad, Anand, Gujarat</div>
+                            </div>
+                            <div class="mt-6">
+                                <h3 class="font-bold text-lg mb-3">📱 Social Media</h3>
+                                <div class="flex flex-wrap gap-3">
+                                    <a href="https://instagram.com/krushn_kant_07" target="_blank" class="social-icon flex items-center gap-2 bg-pink-600 text-white px-4 py-2 rounded-full text-sm hover:scale-105 transition"><i class="fab fa-instagram"></i> Instagram</a>
+                                    <a href="https://www.youtube.com/@lofigitwala" target="_blank" class="social-icon flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-full text-sm hover:scale-105 transition"><i class="fab fa-youtube"></i> YouTube</a>
+                                    <a href="https://github.com/krushnkant07" target="_blank" class="social-icon flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-full text-sm hover:scale-105 transition"><i class="fab fa-github"></i> GitHub</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="rounded-2xl shadow-lg p-8" style="background-color: var(--bg-secondary);">
-                            <h2 class="text-2xl font-bold mb-6"><i class="fas fa-cogs mr-2 text-orange-500"></i> Skills & Tools</h2>
-                            <div class="flex flex-wrap gap-2 mb-6"><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">HTML5/CSS3</span><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">JavaScript</span><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">Bootstrap</span><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">React</span><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">PHP</span><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">Python</span><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">MySQL</span><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">Photoshop</span><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">Video Editing</span><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">ChatGPT</span></div>
-                            <h2 class="text-xl font-bold mt-4">Live Project Links</h2>
-                            <div class="flex flex-wrap gap-3 mt-2"><a href="https://krishna-ads.vercel.app/" target="_blank" class="flex items-center gap-2 bg-cyan-600 text-white px-4 py-2 rounded-full text-sm hover:scale-105 transition">React App →</a><a href="https://krushnkant07.github.io/krishna-advertisement/" target="_blank" class="flex items-center gap-2 bg-orange-600 text-white px-4 py-2 rounded-full text-sm hover:scale-105 transition">HTML/CSS/JS →</a></div>
+                            <h2 class="text-2xl font-bold mb-6"><i class="fas fa-graduation-cap mr-2 text-orange-500"></i> Education</h2>
+                            <div class="space-y-5">
+                                <div class="border-b pb-3 border-orange-200 dark:border-gray-700">
+                                    <p class="font-bold text-lg">Bachelor of Computer Application (BCA)</p>
+                                    <p class="text-sm" style="color: var(--text-secondary);">Anand Commerce College · Sardar Patel University, V.V Nagar</p>
+                                    <p class="font-semibold text-orange-600">CGPA: 7.84</p>
+                                </div>
+                                <div class="border-b pb-3 border-orange-200 dark:border-gray-700">
+                                    <p class="font-bold text-lg">Higher Secondary School (12th)</p>
+                                    <p class="text-sm" style="color: var(--text-secondary);">T.B.H.S</p>
+                                    <p class="font-semibold text-orange-600">Percentage: 68%</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-lg">Secondary School (10th)</p>
+                                    <p class="text-sm" style="color: var(--text-secondary);">T.B.H.S</p>
+                                    <p class="font-semibold text-orange-600">Percentage: 58%</p>
+                                </div>
+                            </div>
+                            <div class="mt-6">
+                                <h3 class="font-bold text-lg mb-2">💻 Programming Skills</h3>
+                                <div class="flex flex-wrap gap-2"><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">HTML/CSS/JS</span><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">PHP</span><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">Bootstrap</span><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">Python</span><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">MS Word</span><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">PowerPoint</span></div>
+                            </div>
                         </div>
                     </div>
-                    <!-- START: Download CV Button Section (from user request) -->
                     <div class="mt-10 text-center">
                         <button id="downloadCvBtnInfo" class="inline-flex items-center gap-2 bg-orange-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-700 transition shadow-md"><i class="fas fa-file-pdf"></i> Download Full CV (PDF)</button>
                     </div>
-                    <!-- END: Download CV Button Section -->
                 </div>
             </section>
         </div>
@@ -311,13 +328,17 @@
     <footer class="py-10 px-6 transition-colors" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-color);">
         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="text-2xl font-bold">Krushn Kant <span class="text-orange-500">Web Designer</span></div>
-            <div class="flex gap-6 text-2xl"><i class="fab fa-github"></i><i class="fab fa-linkedin"></i><i class="fab fa-twitter"></i><i class="fab fa-instagram"></i><i class="fab fa-whatsapp"></i></div>
-            <div class="text-sm opacity-70" style="color: var(--text-secondary);">© 2025 Krushn Kant — BCA Graduate | Modern Portfolio</div>
+            <div class="flex gap-6 text-2xl">
+                <a href="https://instagram.com/krushn_kant_07" target="_blank" class="social-icon hover:text-orange-500"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@lofigitwala" target="_blank" class="social-icon hover:text-red-600"><i class="fab fa-youtube"></i></a>
+                <a href="https://github.com/krushnkant07" target="_blank" class="social-icon hover:text-gray-600"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/krushn-kant" target="_blank" class="social-icon hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="text-sm opacity-70" style="color: var(--text-secondary);">© 2025 Krushn Kant — BCA Graduate | CGPA 7.84</div>
         </div>
     </footer>
 
     <script>
-        // Dark mode toggle
         const toggle = document.getElementById('darkModeToggle');
         const icon = document.getElementById('themeIcon');
         function setTheme(t) { if(t==='dark'){ document.body.classList.add('dark'); localStorage.setItem('theme','dark'); icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); } else { document.body.classList.remove('dark'); localStorage.setItem('theme','light'); icon.classList.remove('fa-sun'); icon.classList.add('fa-moon'); } }
@@ -325,25 +346,21 @@
         if(savedTheme === 'dark') setTheme('dark'); else setTheme('light');
         toggle.addEventListener('click',()=>{ document.body.classList.contains('dark') ? setTheme('light') : setTheme('dark'); });
         
-        // Page navigation
         function showPage(pageId){ document.querySelectorAll('.page-section').forEach(p=>p.classList.remove('active-page')); document.getElementById(`${pageId}-page`).classList.add('active-page'); window.scrollTo({top:0, behavior:'smooth'}); }
         function mobileMenuClose(){ document.getElementById('mobile-menu').classList.add('hidden'); }
         document.getElementById('mobile-menu-btn').addEventListener('click',()=>{ document.getElementById('mobile-menu').classList.toggle('hidden'); });
         window.showPage = showPage;
         
-        // Intersection observer
         const obs = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('section-visible'); }); },{threshold:0.1});
         document.querySelectorAll('.section-transition').forEach(s=>obs.observe(s));
         
-        // Gallery: dynamic array of design themed placeholders
-        const galleryItems = ['web-design-1','responsive-layout','bootstrap-ui','html5-css','php-backend','video-edit','photoshop-design','animation-ui'];
+        const galleryItems = ['web-design','responsive','bootstrap','javascript','php','photoshop','animation','react'];
         const galleryContainer = document.getElementById('galleryContainer');
         if(galleryContainer){
-            galleryItems.forEach((name,idx)=>{
+            galleryItems.forEach((name)=>{
                 const div = document.createElement('div'); div.className='gallery-img rounded-2xl overflow-hidden shadow-lg';
                 const img = document.createElement('img'); img.className='w-full h-64 object-cover';
-                img.src = `https://placehold.co/600x400?text=${encodeURIComponent(name.replace(/-/g,' '))}+Project`;
-                img.onerror = function(){ this.src = 'https://placehold.co/600x400?text=Design+Snapshot'; };
+                img.src = `https://placehold.co/600x400?text=${name}+Project`;
                 img.onclick = () => { document.getElementById('modalImage').src = img.src; document.getElementById('imageModal').style.display = 'flex'; };
                 div.appendChild(img);
                 galleryContainer.appendChild(div);
@@ -351,26 +368,11 @@
         }
         window.closeModal = () => { document.getElementById('imageModal').style.display = 'none'; };
         
-        // PDF Download functionality (creates a professional CV PDF from resume data)
-        function downloadCV() {
-            alert("📄 Generating your professional CV PDF...\n\nKrushn Kant Talpada\nWebsite Designer | BCA Graduate\nContact: krushndevkant@gmail.com | +91 7663045514\nSkills: HTML5, CSS3, JS, Bootstrap, React, PHP, Python, Photoshop\nEducation: BCA from Sardar Patel University\n\nLive Projects: Krishna Ads (React) & Krishna Advertisement (HTML/CSS/JS)\n\nThis is a demo PDF generation. In a real scenario, a detailed PDF would be downloaded.");
-            // In a full implementation, you would generate actual PDF. For now we simulate.
-            const link = document.createElement('a');
-            link.href = '#';
-            link.download = 'Krushn_Kant_Resume.pdf';
-            link.click();
-        }
-        const downloadBtn1 = document.getElementById('downloadCvBtnHome');
-        const downloadBtn2 = document.getElementById('downloadCvBtnInfo');
-        if(downloadBtn1) downloadBtn1.addEventListener('click', downloadCV);
-        if(downloadBtn2) downloadBtn2.addEventListener('click', downloadCV);
+        function downloadCV() { alert("📄 Krushn Kant Talpada - Resume\n\nEducation:\n• BCA: CGPA 7.84 (Sardar Patel University)\n• 12th: 68% | 10th: 58%\nSkills: HTML, CSS, JS, Bootstrap, React, PHP, Python, Photoshop\nContact: krushndevkant@gmail.com | +91 7663045514\nInstagram: @krushn_kant_07\nYouTube: @lofigitwala\n\nLive Projects: Krishna Ads (React) & Krishna Advertisement"); }
+        document.getElementById('downloadCvBtnHome')?.addEventListener('click', downloadCV);
+        document.getElementById('downloadCvBtnInfo')?.addEventListener('click', downloadCV);
         
-        // Set initial visible sections
-        window.addEventListener('load', () => {
-            document.querySelectorAll('.section-transition').forEach(el => {
-                if(el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('section-visible');
-            });
-        });
+        window.addEventListener('load', () => { document.querySelectorAll('.section-transition').forEach(el => { if(el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('section-visible'); }); });
     </script>
 </body>
 </html>
