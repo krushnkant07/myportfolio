@@ -492,7 +492,7 @@
             for(let i = 1; i <= 8; i++) {
                 const div = document.createElement('div'); div.className = 'gallery-img rounded-2xl overflow-hidden shadow-lg';
                 const img = document.createElement('img'); img.className = 'w-full h-48 md:h-64 object-cover';
-                const imgSrc = `upload/image_${i}.jpg`;
+                const imgSrc = `upload/image_${i}.webp`;
                 img.src = imgSrc;
                 img.alt = `Gallery ${i}`;
                 img.onerror = function() { this.src = `https://placehold.co/600x400?text=Image+${i}`; };
