@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- JSZip for batch download -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <style>
         :root {
             --bg-primary: #ffffff;
@@ -161,7 +159,7 @@
             box-shadow: 0 10px 20px -5px rgba(249,115,22,0.4);
         }
         
-        /* Hero image container fix - no cut, responsive */
+        /* Hero image container fix - no cut */
         .hero-image-container {
             width: 100%;
             height: 100%;
@@ -179,7 +177,6 @@
             object-position: center 20%;
         }
         
-        /* Mobile responsive fixes */
         @media (max-width: 768px) {
             .container {
                 padding-left: 1rem;
@@ -188,19 +185,11 @@
             h1 {
                 font-size: 2.5rem !important;
             }
-            .grid {
-                gap: 1.5rem;
-            }
             .gallery-img img {
                 height: 200px !important;
             }
-            .hero-image-container {
-                width: 100%;
-                height: 100%;
-            }
         }
         
-        /* Smooth container */
         .container {
             width: 100%;
             max-width: 1280px;
@@ -312,15 +301,20 @@
                 </div>
             </section>
 
+            <!-- ========== TECHNICAL & CREATIVE SKILLS - ORIGINAL DETAILED VERSION ========== -->
             <section class="py-12 md:py-20 px-4 md:px-6 lg:px-12 section-transition" style="background-color: var(--bg-primary);">
                 <div class="container mx-auto text-center">
                     <h2 class="text-3xl md:text-4xl font-bold mb-3">Technical & Creative Skills</h2>
                     <div class="w-20 h-1 bg-orange-500 mx-auto mb-8 md:mb-12"></div>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                        <div class="p-4 md:p-6 rounded-2xl shadow-md hover-lift" style="background-color: var(--bg-secondary);"><i class="fab fa-html5 text-4xl md:text-5xl text-orange-600 mb-2 md:mb-3"></i><h3 class="text-base md:text-xl font-bold">HTML5/CSS3</h3><p class="text-xs md:text-sm" style="color: var(--text-secondary);">Responsive</p></div>
-                        <div class="p-4 md:p-6 rounded-2xl shadow-md hover-lift" style="background-color: var(--bg-secondary);"><i class="fab fa-js text-4xl md:text-5xl text-yellow-500 mb-2 md:mb-3"></i><h3 class="text-base md:text-xl font-bold">JavaScript</h3><p class="text-xs md:text-sm" style="color: var(--text-secondary);">Interactive UI</p></div>
-                        <div class="p-4 md:p-6 rounded-2xl shadow-md hover-lift" style="background-color: var(--bg-secondary);"><i class="fab fa-bootstrap text-4xl md:text-5xl text-purple-600 mb-2 md:mb-3"></i><h3 class="text-base md:text-xl font-bold">Bootstrap</h3><p class="text-xs md:text-sm" style="color: var(--text-secondary);">Mobile-First</p></div>
-                        <div class="p-4 md:p-6 rounded-2xl shadow-md hover-lift" style="background-color: var(--bg-secondary);"><i class="fab fa-react text-4xl md:text-5xl text-cyan-500 mb-2 md:mb-3"></i><h3 class="text-base md:text-xl font-bold">React.js</h3><p class="text-xs md:text-sm" style="color: var(--text-secondary);">Components</p></div>
+                        <div class="p-4 md:p-6 rounded-2xl shadow-md hover-lift" style="background-color: var(--bg-secondary);"><i class="fab fa-html5 text-4xl md:text-5xl text-orange-600 mb-2 md:mb-3"></i><h3 class="text-base md:text-xl font-bold">HTML5/CSS3</h3><p style="color: var(--text-secondary);">Responsive Layouts</p></div>
+                        <div class="p-4 md:p-6 rounded-2xl shadow-md hover-lift" style="background-color: var(--bg-secondary);"><i class="fab fa-js text-4xl md:text-5xl text-yellow-500 mb-2 md:mb-3"></i><h3 class="text-base md:text-xl font-bold">JavaScript</h3><p style="color: var(--text-secondary);">Interactive UI</p></div>
+                        <div class="p-4 md:p-6 rounded-2xl shadow-md hover-lift" style="background-color: var(--bg-secondary);"><i class="fab fa-bootstrap text-4xl md:text-5xl text-purple-600 mb-2 md:mb-3"></i><h3 class="text-base md:text-xl font-bold">Bootstrap</h3><p style="color: var(--text-secondary);">Mobile-First</p></div>
+                        <div class="p-4 md:p-6 rounded-2xl shadow-md hover-lift" style="background-color: var(--bg-secondary);"><i class="fab fa-react text-4xl md:text-5xl text-cyan-500 mb-2 md:mb-3"></i><h3 class="text-base md:text-xl font-bold">React.js</h3><p style="color: var(--text-secondary);">Component Based</p></div>
+                        <div class="p-4 md:p-6 rounded-2xl shadow-md hover-lift" style="background-color: var(--bg-secondary);"><i class="fab fa-php text-4xl md:text-5xl text-indigo-500 mb-2 md:mb-3"></i><h3 class="text-base md:text-xl font-bold">PHP & Python</h3><p style="color: var(--text-secondary);">Backend Basics</p></div>
+                        <div class="p-4 md:p-6 rounded-2xl shadow-md hover-lift" style="background-color: var(--bg-secondary);"><i class="fas fa-paintbrush text-4xl md:text-5xl text-pink-500 mb-2 md:mb-3"></i><h3 class="text-base md:text-xl font-bold">Photoshop</h3><p style="color: var(--text-secondary);">Design & Animation</p></div>
+                        <div class="p-4 md:p-6 rounded-2xl shadow-md hover-lift" style="background-color: var(--bg-secondary);"><i class="fas fa-video text-4xl md:text-5xl text-red-500 mb-2 md:mb-3"></i><h3 class="text-base md:text-xl font-bold">Video Editor</h3><p style="color: var(--text-secondary);">Creative Storytelling</p></div>
+                        <div class="p-4 md:p-6 rounded-2xl shadow-md hover-lift" style="background-color: var(--bg-secondary);"><i class="fas fa-robot text-4xl md:text-5xl text-emerald-500 mb-2 md:mb-3"></i><h3 class="text-base md:text-xl font-bold">ChatGPT Prompt</h3><p style="color: var(--text-secondary);">AI Integration</p></div>
                     </div>
                 </div>
             </section>
@@ -328,10 +322,11 @@
             <section id="contact" class="py-12 md:py-20 px-4 md:px-6 lg:px-12 section-transition" style="background-color: var(--bg-secondary);">
                 <div class="container mx-auto max-w-4xl text-center"><h2 class="text-3xl md:text-4xl font-bold">Let's Connect</h2><div class="w-20 h-1 bg-orange-500 mx-auto my-4"></div>
                     <div class="flex flex-wrap justify-center gap-3 md:gap-5 mb-8 md:mb-10">
-                        <a href="mailto:krushndevkant@gmail.com" class="contact-btn flex items-center gap-2 px-3 py-2 md:px-5 md:py-3 rounded-full shadow-md text-sm md:text-base" style="background: var(--bg-primary);"><i class="fas fa-envelope text-orange-600"></i> Email</a>
-                        <a href="tel:+917862043514" class="contact-btn flex items-center gap-2 px-3 py-2 md:px-5 md:py-3 rounded-full shadow-md text-sm md:text-base" style="background: var(--bg-primary);"><i class="fas fa-phone text-green-600"></i> Call</a>
+                        <a href="mailto:krushndevkant@gmail.com" class="contact-btn flex items-center gap-2 px-3 py-2 md:px-5 md:py-3 rounded-full shadow-md text-sm md:text-base" style="background: var(--bg-primary);"><i class="fas fa-envelope text-orange-600"></i> krushndevkant@gmail.com</a>
+                        <a href="tel:+917862043514" class="contact-btn flex items-center gap-2 px-3 py-2 md:px-5 md:py-3 rounded-full shadow-md text-sm md:text-base" style="background: var(--bg-primary);"><i class="fas fa-phone text-green-600"></i> +91 7862043514</a>
                         <a href="https://wa.me/917862043514" target="_blank" class="contact-btn flex items-center gap-2 px-3 py-2 md:px-5 md:py-3 rounded-full shadow-md text-sm md:text-base" style="background: var(--bg-primary);"><i class="fab fa-whatsapp text-green-500"></i> WhatsApp</a>
                         <a href="https://instagram.com/krushn_kant_07" target="_blank" class="contact-btn flex items-center gap-2 px-3 py-2 md:px-5 md:py-3 rounded-full shadow-md text-sm md:text-base" style="background: var(--bg-primary);"><i class="fab fa-instagram text-pink-500"></i> Instagram</a>
+                        <a href="https://www.youtube.com/@lofigitwala" target="_blank" class="contact-btn flex items-center gap-2 px-3 py-2 md:px-5 md:py-3 rounded-full shadow-md text-sm md:text-base" style="background: var(--bg-primary);"><i class="fab fa-youtube text-red-600"></i> YouTube</a>
                     </div>
                     <form class="grid md:grid-cols-2 gap-4 md:gap-5 text-left p-5 md:p-8 rounded-3xl shadow-lg" style="background-color: var(--bg-primary);">
                         <input type="text" placeholder="Full Name" class="border p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400 text-sm md:text-base">
@@ -376,14 +371,14 @@
                         <h1 class="text-4xl md:text-5xl font-bold">Creative Gallery</h1>
                         <div class="w-24 h-1 bg-orange-500 mx-auto my-4"></div>
                         <p class="text-base md:text-lg" style="color: var(--text-secondary);">Design concepts & UI projects</p>
-                        <button id="downloadAllPhotosBtn" class="mt-6 download-gallery-btn inline-flex items-center gap-2 text-white px-5 py-2 md:px-6 md:py-2 rounded-full font-semibold transition shadow-md text-sm md:text-base"><i class="fas fa-download"></i> Download All Photos (ZIP)</button>
+                        <button id="downloadAllPhotosBtn" class="mt-6 download-gallery-btn inline-flex items-center gap-2 text-white px-5 py-2 md:px-6 md:py-2 rounded-full font-semibold transition shadow-md text-sm md:text-base"><i class="fas fa-download"></i> Download All Photos (8 Images)</button>
                     </div>
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6" id="galleryContainer"></div>
                 </div>
             </section>
         </div>
 
-        <!-- ========== MY INFO PAGE ========== -->
+        <!-- ========== MY INFO PAGE - ORIGINAL DETAILED VERSION ========== -->
         <div id="myinfo-page" class="page-section">
             <section class="py-12 md:py-20 px-4 md:px-6 lg:px-12" style="background-color: var(--bg-primary);">
                 <div class="container mx-auto max-w-5xl">
@@ -392,18 +387,53 @@
                         <div class="w-24 h-1 bg-orange-500 mx-auto my-4"></div>
                         <p class="text-base md:text-lg" style="color: var(--text-secondary);">Krushnadev Talpada – Website Designer | BCA (CGPA 7.84)</p>
                     </div>
-                    <div class="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-8">
+                    <div class="grid md:grid-cols-2 gap-6 md:gap-8">
                         <div class="rounded-2xl shadow-lg p-6 md:p-8" style="background-color: var(--bg-secondary);">
-                            <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6"><i class="fas fa-id-card mr-2 text-orange-500"></i> Contact & Basic</h2>
-                            <div class="space-y-3 text-sm md:text-base"><div><span class="font-semibold">Full Name:</span> Krushnadev Talpada</div><div><span class="font-semibold">Designation:</span> Website Designer</div><div><span class="font-semibold">Email:</span> krushndevkant@gmail.com</div><div><span class="font-semibold">Phone:</span> +91 7862043514</div><div><span class="font-semibold">Address:</span> Gajana, Borsad, Anand</div></div>
+                            <h2 class="text-2xl font-bold mb-6"><i class="fas fa-id-card mr-2 text-orange-500"></i> Contact & Basic</h2>
+                            <div class="space-y-4">
+                                <div><span class="font-semibold">Full Name:</span> Krushnadev Talpada</div>
+                                <div><span class="font-semibold">Designation:</span> Website Designer / Frontend Developer</div>
+                                <div><span class="font-semibold">Email:</span> krushndevkant@gmail.com <button onclick="location.href='mailto:krushndevkant@gmail.com'" class="ml-2 text-xs bg-orange-500 text-white px-2 py-1 rounded"><i class="fas fa-envelope"></i> Mail</button></div>
+                                <div><span class="font-semibold">Phone:</span> +91 7862043514 <button onclick="location.href='tel:+917862043514'" class="ml-2 text-xs bg-gray-700 text-white px-2 py-1 rounded"><i class="fas fa-phone"></i> Call</button></div>
+                                <div><span class="font-semibold">WhatsApp:</span> +91 7862043514 <button onclick="window.open('https://wa.me/917862043514')" class="ml-2 text-xs bg-green-600 text-white px-2 py-1 rounded"><i class="fab fa-whatsapp"></i> Chat</button></div>
+                                <div><span class="font-semibold">Address:</span> Gajana, Borsad, Anand, Gujarat</div>
+                            </div>
+                            <div class="mt-6">
+                                <h3 class="font-bold text-lg mb-3">📱 Social Media</h3>
+                                <div class="flex flex-wrap gap-3">
+                                    <a href="https://instagram.com/krushn_kant_07" target="_blank" class="social-icon flex items-center gap-2 bg-pink-600 text-white px-4 py-2 rounded-full text-sm hover:scale-105 transition"><i class="fab fa-instagram"></i> Instagram</a>
+                                    <a href="https://www.youtube.com/@lofigitwala" target="_blank" class="social-icon flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-full text-sm hover:scale-105 transition"><i class="fab fa-youtube"></i> YouTube</a>
+                                    <a href="https://github.com/krushnkant07" target="_blank" class="social-icon flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-full text-sm hover:scale-105 transition"><i class="fab fa-github"></i> GitHub</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="rounded-2xl shadow-lg p-6 md:p-8" style="background-color: var(--bg-secondary);">
-                            <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6"><i class="fas fa-graduation-cap mr-2 text-orange-500"></i> Education</h2>
-                            <div class="space-y-4 text-sm md:text-base"><div><p class="font-bold">BCA - CGPA 7.84</p><p class="text-xs md:text-sm">Anand Commerce College, Sardar Patel University</p></div><div><p class="font-bold">12th - 68%</p><p class="text-xs md:text-sm">T.B.H.S</p></div><div><p class="font-bold">10th - 58%</p><p class="text-xs md:text-sm">T.B.H.S</p></div></div>
+                            <h2 class="text-2xl font-bold mb-6"><i class="fas fa-graduation-cap mr-2 text-orange-500"></i> Education</h2>
+                            <div class="space-y-5">
+                                <div class="border-b pb-3 border-orange-200 dark:border-gray-700">
+                                    <p class="font-bold text-lg">Bachelor of Computer Application (BCA)</p>
+                                    <p class="text-sm" style="color: var(--text-secondary);">Anand Commerce College · Sardar Patel University, V.V Nagar</p>
+                                    <p class="font-semibold text-orange-600">CGPA: 7.84</p>
+                                </div>
+                                <div class="border-b pb-3 border-orange-200 dark:border-gray-700">
+                                    <p class="font-bold text-lg">Higher Secondary School (12th)</p>
+                                    <p class="text-sm" style="color: var(--text-secondary);">T.B.H.S</p>
+                                    <p class="font-semibold text-orange-600">Percentage: 68%</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-lg">Secondary School (10th)</p>
+                                    <p class="text-sm" style="color: var(--text-secondary);">T.B.H.S</p>
+                                    <p class="font-semibold text-orange-600">Percentage: 58%</p>
+                                </div>
+                            </div>
+                            <div class="mt-6">
+                                <h3 class="font-bold text-lg mb-2">💻 Programming Skills</h3>
+                                <div class="flex flex-wrap gap-2"><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">HTML/CSS/JS</span><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">PHP</span><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">REACT</span><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">Bootstrap</span><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">Python</span><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">MS Word</span><span class="px-3 py-1 rounded-full bg-orange-100 dark:bg-gray-700">PowerPoint</span></div>
+                            </div>
                         </div>
                     </div>
                     <div class="mt-8 md:mt-10 text-center">
-                        <button id="downloadCvBtnInfo" class="inline-flex items-center gap-2 bg-orange-600 text-white px-6 py-2 md:px-8 md:py-3 rounded-full text-base md:text-lg font-semibold hover:bg-orange-700 transition shadow-md"><i class="fas fa-file-pdf"></i> Download CV (PDF)</button>
+                        <button id="downloadCvBtnInfo" class="inline-flex items-center gap-2 bg-orange-600 text-white px-6 py-2 md:px-8 md:py-3 rounded-full text-base md:text-lg font-semibold hover:bg-orange-700 transition shadow-md"><i class="fas fa-file-pdf"></i> Download Full CV (PDF)</button>
                     </div>
                 </div>
             </section>
@@ -462,7 +492,7 @@
             for(let i = 1; i <= 8; i++) {
                 const div = document.createElement('div'); div.className = 'gallery-img rounded-2xl overflow-hidden shadow-lg';
                 const img = document.createElement('img'); img.className = 'w-full h-48 md:h-64 object-cover';
-                const imgSrc = `upload/image_${i}.webp`;
+                const imgSrc = `upload/image_${i}.jpg`;
                 img.src = imgSrc;
                 img.alt = `Gallery ${i}`;
                 img.onerror = function() { this.src = `https://placehold.co/600x400?text=Image+${i}`; };
@@ -473,35 +503,38 @@
             }
         }
         
+        // Download each photo individually - NO ZIP, just trigger download for each image
         async function downloadAllPhotos() {
             const btn = document.getElementById('downloadAllPhotosBtn');
-            const original = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Loading...';
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Downloading 8 images...';
             btn.disabled = true;
-            try {
-                const zip = new JSZip();
-                let count = 0;
-                for(let i = 0; i < currentGalleryImages.length; i++) {
-                    const url = currentGalleryImages[i];
-                    try {
-                        const response = await fetch(url);
-                        const blob = await response.blob();
-                        const ext = url.split('.').pop();
-                        zip.file(`photo_${i+1}.${ext}`, blob);
-                        count++;
-                    } catch(e) { console.warn(e); }
+            
+            let downloaded = 0;
+            for(let i = 0; i < currentGalleryImages.length; i++) {
+                const imgUrl = currentGalleryImages[i];
+                try {
+                    const response = await fetch(imgUrl);
+                    const blob = await response.blob();
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    const extension = imgUrl.split('.').pop();
+                    link.download = `Krushnadev_Photo_${i+1}.${extension}`;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(url);
+                    downloaded++;
+                    // Small delay between downloads to prevent browser blocking
+                    await new Promise(r => setTimeout(r, 300));
+                } catch(e) {
+                    console.warn(`Failed to download ${imgUrl}`);
                 }
-                const content = await zip.generateAsync({ type: "blob" });
-                const link = document.createElement('a');
-                const url = URL.createObjectURL(content);
-                link.href = url;
-                link.download = `Krushnadev_Gallery.zip`;
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                URL.revokeObjectURL(url);
-                alert(`✅ ${count} photos downloaded successfully!`);
-            } catch(e) { alert('❌ Error creating ZIP'); } finally { btn.innerHTML = original; btn.disabled = false; }
+            }
+            alert(`✅ Successfully downloaded ${downloaded} photos!`);
+            btn.innerHTML = originalText;
+            btn.disabled = false;
         }
         
         window.closeModal = () => { document.getElementById('imageModal').style.display = 'none'; };
